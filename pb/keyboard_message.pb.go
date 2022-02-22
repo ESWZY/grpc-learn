@@ -78,7 +78,7 @@ type Keyboard struct {
 	unknownFields protoimpl.UnknownFields
 
 	Layout  Keyboard_Layout `protobuf:"varint,1,opt,name=layout,proto3,enum=grpc.learn.Keyboard_Layout" json:"layout,omitempty"`
-	Backlit bool            `protobuf:"varint,2,opt,name=backlit,proto3" json:"backlit,omitempty"` // 背光
+	Backlit bool            `protobuf:"varint,2,opt,name=backlit,proto3" json:"backlit,omitempty"`
 }
 
 func (x *Keyboard) Reset() {

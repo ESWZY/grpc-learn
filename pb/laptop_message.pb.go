@@ -26,16 +26,17 @@ type Laptop struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       string     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Brand    string     `protobuf:"bytes,2,opt,name=brand,proto3" json:"brand,omitempty"`
-	Name     string     `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Cpu      *CPU       `protobuf:"bytes,4,opt,name=cpu,proto3" json:"cpu,omitempty"`
-	Ram      *Memory    `protobuf:"bytes,5,opt,name=ram,proto3" json:"ram,omitempty"`
-	Gpus     []*GPU     `protobuf:"bytes,6,rep,name=gpus,proto3" json:"gpus,omitempty"` // 拥有多个 GPU 和存储
+	Id    string  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Brand string  `protobuf:"bytes,2,opt,name=brand,proto3" json:"brand,omitempty"`
+	Name  string  `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Cpu   *CPU    `protobuf:"bytes,4,opt,name=cpu,proto3" json:"cpu,omitempty"`
+	Ram   *Memory `protobuf:"bytes,5,opt,name=ram,proto3" json:"ram,omitempty"`
+	// Have multiple GPU and storage as same time.
+	Gpus     []*GPU     `protobuf:"bytes,6,rep,name=gpus,proto3" json:"gpus,omitempty"`
 	Storages []*Storage `protobuf:"bytes,7,rep,name=storages,proto3" json:"storages,omitempty"`
 	Screen   *Screen    `protobuf:"bytes,8,opt,name=screen,proto3" json:"screen,omitempty"`
 	Keyboard *Keyboard  `protobuf:"bytes,9,opt,name=keyboard,proto3" json:"keyboard,omitempty"`
-	// 当使用 oneof 字段组时，只有最后分配的字段才会保留其值（？）
+	// when using oneof fields group, only the field that get assigned last will keep its value.
 	//
 	// Types that are assignable to Weight:
 	//	*Laptop_WeightKg

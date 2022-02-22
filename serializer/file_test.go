@@ -17,7 +17,7 @@ func TestFileSerializer(t *testing.T) {
 	binaryFile := "../tmp/laptop.bin"
 	jsonFile := "../tmp/laptop.json"
 
-	laptop1 := sample.NewLapTop()
+	laptop1 := sample.NewLaptop()
 	err := serializer.WriteProtobufToBinaryFile(laptop1, binaryFile)
 	require.NoError(t, err)
 

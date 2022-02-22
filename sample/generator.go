@@ -113,8 +113,8 @@ func NewScreen() *pb.Screen {
 	return screen
 }
 
-// NewLapTop returns a new sample Laptop
-func NewLapTop() *pb.Laptop {
+// NewLaptop returns a new sample Laptop
+func NewLaptop() *pb.Laptop {
 	brand := randomLaptopBrand()
 	name := randomLaptopName(brand)
 
