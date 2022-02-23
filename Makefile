@@ -1,5 +1,5 @@
 gen:
-	protoc --proto_path=proto proto/*.proto --go-grpc_out=.
+	protoc --proto_path=proto proto/*.proto --go-grpc_out=require_unimplemented_servers=false:. --go_out=.
 
 clean:
 	rm pb/*.go
