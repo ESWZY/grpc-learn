@@ -14,7 +14,7 @@ client:
 	go run cmd/client/main.go -address 0.0.0.0:8080
 
 nginx:
-	nginx -c $(CURDIR)/nginx.conf
+	nginx -c nginx.conf -p $(CURDIR)
 
 server1:
 	go run cmd/server/main.go -port 50051
