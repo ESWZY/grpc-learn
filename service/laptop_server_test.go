@@ -72,7 +72,7 @@ func TestServerCreateLaptop(t *testing.T) {
 			}
 
 			// Direct call on SERVER SIDE.
-			server := service.NewLaptopServer(tc.store)
+			server := service.NewLaptopServer(tc.store, nil)
 			res, err := server.CreateLaptop(context.Background(), req)
 
 			if tc.code == codes.OK {
