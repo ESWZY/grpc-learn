@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"log"
-	"time"
 
 	"github.com/google/uuid"
 	"google.golang.org/grpc/codes"
@@ -45,7 +44,7 @@ func (server *LaptopServer) CreateLaptop(
 		laptop.Id = id.String()
 	}
 
-	time.Sleep(6 * time.Second)
+	// time.Sleep(6 * time.Second)
 
 	if ctx.Err() == context.Canceled {
 		log.Print("request is canceled")
@@ -86,6 +85,7 @@ func (server *LaptopServer) SearchLaptop(
 	log.Printf("receive a search-laptop request with filter: %v", filter)
 
 	err := server.Store.Search(
+		stream.Context(),
 		filter,
 		func(laptop *pb.Laptop) error {
 			res := &pb.SearchLaptopResponse{Laptop: laptop}
