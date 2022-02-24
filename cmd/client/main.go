@@ -12,6 +12,7 @@ import (
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/credentials/insecure"
 
 	"github.com/eswzy/grpc-learn/client"
 	"github.com/eswzy/grpc-learn/pb"
@@ -128,7 +129,7 @@ func main() {
 	flag.Parse()
 	log.Printf("dial server %s, TLS = %t", *serverAddress, *enableTLS)
 
-	transportOption := grpc.WithInsecure()
+	transportOption := grpc.WithTransportCredentials(insecure.NewCredentials())
 
 	if *enableTLS {
 		tlsCredentials, err := loadTLSCredentials()
